@@ -8,5 +8,8 @@ require_once(__DIR__ . '/RuleInterface.php');
 
 class TwoPlayerRule implements Rule
 {
-
+    public function drawOmikuji()
+    {
+        
+    }
 }

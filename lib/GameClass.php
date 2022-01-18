@@ -8,6 +8,7 @@ use omikuji\lib\OnePlayerRule;
 require_once(__DIR__ . '/PlayerClass.php');
 require_once(__DIR__ . '/OnePlayerRuleClass.php');
 require_once(__DIR__ . '/TwoPlayerRuleClass.php');
+require_once(__DIR__ . '/HandleClass.php');
 
 class Game
 {
@@ -20,10 +21,14 @@ class Game
 
     public function startGame(): string
     {
-        $player = new Player();
+        $handle = new Handle();
         $rule = $this->getRule($this->playerNum);
 
         echo 'おみくじゲームを開始します' . PHP_EOL;
+       
+
+        $handle->drawOmikuji($rule);
+        exit;
 
 
 

@@ -4,8 +4,8 @@ namespace omikuji\lib;
 
 class Player
 {
-    public function doOmikuji()
+    public function drawOmikuji(Omikuji $omikuji)
     {
-        
+        return $omikuji->randomOmikuji();
     }
 }
