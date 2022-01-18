@@ -25,14 +25,11 @@ class Game
         $rule = $this->getRule($this->playerNum);
 
         echo 'おみくじゲームを開始します' . PHP_EOL;
-       
 
-        $handle->drawOmikuji($rule);
-        exit;
+        $omikujis = $handle->drawOmikuji($rule);
+        $result = $handle->juge($rule, $omikujis);
 
-
-
-        return 'プレイヤー1';
+        return $result;
     }
 
     public function getRule(int $playerNum): object
@@ -45,6 +42,6 @@ class Game
     }
 }
 
-$game = new Game(1);
-$game->startGame();
-exit;
+// $game = new Game(1);
+// $game->startGame();
+// exit;

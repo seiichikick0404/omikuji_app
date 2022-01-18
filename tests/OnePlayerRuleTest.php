@@ -3,15 +3,15 @@
 namespace omikuji\lib;
 
 use PHPUnit\Framework\TestCase;
+use omikuji\lib\OnePlayerRule;
 use omikuji\lib\Player;
 
-class PlayerTest extends TestCase
+class OnePlayerRuleTest extends TestCase
 {
     public function testDrawOmikuji()
     {
-        $player = new Player();
-        $omikuji = new Omikuji();
-        $omikujiArr = $player->drawOmikuji($omikuji);
+        $rule = new OnePlayerRule();
+        $omikujiArr = $rule->drawOmikuji();
 
         // 配列かチェック
         $this->assertTrue(is_array($omikujiArr));

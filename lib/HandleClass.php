@@ -6,8 +6,13 @@ require_once(__DIR__ . '/RuleInterface.php');
 
 class Handle
 {
-    public function drawOmikuji(Rule $rule): void
+    public function drawOmikuji(Rule $rule): array
     {
-        $rule->drawOmikuji();
+        return $rule->drawOmikuji();
+    }
+
+    public function juge(Rule $rule, array $omikujis): string
+    {
+        return $rule->jugePlayer($omikujis);
     }
 }

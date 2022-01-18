@@ -12,4 +12,9 @@ class TwoPlayerRule implements Rule
     {
         
     }
+
+    public function jugePlayer(array $omikujis)
+    {
+
+    }
 }
