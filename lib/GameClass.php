@@ -2,47 +2,44 @@
 
 namespace omikuji\lib;
 
+use omikuji\lib\TwoPlayerRule;
+use omikuji\lib\OnePlayerRule;
+
 require_once(__DIR__ . '/PlayerClass.php');
+require_once(__DIR__ . '/OnePlayerRuleClass.php');
+require_once(__DIR__ . '/TwoPlayerRuleClass.php');
 
 class Game
 {
+    private int $playerNum = 0;
+
+    public function __construct(int $playerNum)
+    {
+        $this->playerNum = $playerNum;
+    }
+
     public function startGame(): string
     {
         $player = new Player();
+        $rule = $this->getRule($this->playerNum);
 
         echo 'おみくじゲームを開始します' . PHP_EOL;
 
-        $input = $this->displayHandle();
-        if ($this->isPlay($input)) {
-            $player->doOmikuji();
-        } elseif (!$this->isPlay($input)) {
-            echo 'おみくじゲームを終了します';
-            exit;
-        }
+
 
         return 'プレイヤー1';
     }
 
-    public function displayHandle()
-    {
-        echo 'おみくじを引きますか？（Y/N）' . PHP_EOL;
-        $input = fgets(STDIN);
-
-        return $input;
-    }
-
-    public function isPlay($input): bool
-    {
-        // 前後のスペース削除
-        $select = trim($input, "\t\n\r\0\x0B");
-        $bool = true;
-
-        if ($select === 'Y') {
-            $bool = true;
-        } elseif ($select === 'N') {
-            $bool = false;
+    public function getRule(int $playerNum): object
+    {   
+        if ($playerNum === 1) {
+            return new OnePlayerRule();
+        } elseif ($playerNum === 2) {
+            return new TwoPlayerRule();
         }
-
-        return $bool;
     }
 }
+
+$game = new Game(1);
+$game->startGame();
+exit;

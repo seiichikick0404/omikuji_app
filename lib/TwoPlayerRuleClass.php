@@ -6,7 +6,7 @@ use omikuji\lib\Rule;
 
 require_once(__DIR__ . '/RuleInterface.php');
 
-class OnePlayerRule implements Rule
+class TwoPlayerRule implements Rule
 {
 
 }

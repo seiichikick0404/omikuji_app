@@ -9,17 +9,10 @@ require_once(__DIR__ . '/../lib/GameClass.php');
 
 class GameTest extends TestCase
 {
-    // public function testGame()
-    // {
-    //     $game = new Game();
-    //     $this->assertSame('プレイヤー1', $game->startGame());
-    // }
-
-    public function testIsPlay()
+    public function testGame()
     {
-        // ここのテストから
-        $game = new Game();
-        $input = 'Y';
-        $this->assertSame(true, $game->isPlay($input));
+        // プレイヤーが1人の場合
+        $game = new Game(1);
+        $this->assertSame('プレイヤー1', $game->startGame());
     }
 }
