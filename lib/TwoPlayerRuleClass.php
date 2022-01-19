@@ -13,15 +13,14 @@ require_once(__DIR__ . '/Player2Class.php');
 
 class TwoPlayerRule implements Rule
 {
-    public function drawOmikuji(): array
+    public function drawOmikuji(array $players): array
     {
         $omikuji = new Omikuji();
-        $player = new Player();
 
-        return $player->drawOmikuji($omikuji);
+        return $players[0]->drawOmikuji($omikuji);
     }
 
-    public function jugePlayer(array $omikujis)
+    public function jugePlayer(array $omikujis, array $players)
     {
 
     }

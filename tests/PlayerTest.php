@@ -9,7 +9,7 @@ class PlayerTest extends TestCase
 {
     public function testDrawOmikuji()
     {
-        $player = new Player();
+        $player = new Player('プレイヤー1');
         $omikuji = new Omikuji();
         $omikujiArr = $player->drawOmikuji($omikuji);
 
@@ -21,5 +21,15 @@ class PlayerTest extends TestCase
 
         // 配列構成　キーのチェック rank
         $this->assertArrayHasKey('rank', $omikujiArr);
+    }
+
+    public function testGetName()
+    {
+        // 型がstringかチェック
+        $player = new Player('プレイヤー1');
+        $this->assertTrue(is_string($player->getName()));
+
+        // セットした名前が返却されるかチェック
+        $this->assertSame('プレイヤー1', $player->getName());
     }
 }

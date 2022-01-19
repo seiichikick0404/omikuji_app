@@ -16,14 +16,14 @@ class GameTest extends TestCase
     public function testGame()
     {
         // プレイヤーが1人の場合
-        $game = new Game(1);
+        $game = new Game(1, ['プレイヤー1']);
         $this->assertSame('プレイヤー1', $game->startGame());
     }
 
     public function testGetRule()
     {
         // オブジェクト型かチェック
-        $game = new Game(1);
+        $game = new Game(1, ['プレイヤー1']);
         $rule = $game->getRule(1);
         $this->assertTrue(is_object($rule));
 

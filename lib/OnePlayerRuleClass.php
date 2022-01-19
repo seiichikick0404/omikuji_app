@@ -12,24 +12,23 @@ require_once(__DIR__ . '/PlayerClass.php');
 
 class OnePlayerRule implements Rule
 {
-    public function drawOmikuji(): array
+    public function drawOmikuji(array $players): array
     {
         $omikuji = new Omikuji();
-        $player = new Player();
-
-        return $player->drawOmikuji($omikuji);
+       
+        return $players[0]->drawOmikuji($omikuji);
     }
 
-    public function jugePlayer(array $omikujis): string
+    public function jugePlayer(array $omikujis, array $players): string
     {
-        $this->displayResult($omikujis);
+        $this->displayResult($omikujis, $players);
 
         return 'プレイヤー1';
     }
 
-    public function displayResult(array $omikujis)
+    public function displayResult(array $omikujis, array $players)
     {
         echo '-------------結果---------------------------' . PHP_EOL;
-        echo 'プレイヤーが引いたのは' . $omikujis['name'] . 'です' . PHP_EOL; 
+        echo $players[0]->getName() . 'が引いたのは' . $omikujis['name'] . 'です' . PHP_EOL; 
     }
 }
