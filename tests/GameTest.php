@@ -16,7 +16,11 @@ class GameTest extends TestCase
     public function testGame()
     {
         // プレイヤーが1人の場合
-        $game = new Game(1, ['プレイヤー1']);
+        // $game = new Game(1, ['プレイヤー1']);
+        // $this->assertSame('プレイヤー1', $game->startGame());
+
+        // プレイヤーが2人の場合 プレイヤー1が勝利
+        $game = new Game(2, ['プレイヤー1', 'プレイヤー2']);
         $this->assertSame('プレイヤー1', $game->startGame());
     }
 

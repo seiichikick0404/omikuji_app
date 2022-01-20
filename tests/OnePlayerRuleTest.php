@@ -13,12 +13,13 @@ class OnePlayerRuleTest extends TestCase
         $rule = new OnePlayerRule();
         $player = new Player('プレイヤー1');
         $players = [$player];
-        $omikujiArr = $rule->drawOmikuji($players);
+        $rule->drawOmikuji($players);
+        $omikujiArr = $player->getOmikujiArr();
 
         // 配列かチェック
         $this->assertTrue(is_array($omikujiArr));
 
-        // 配列構成　キーのチェック name
+        // // 配列構成　キーのチェック name
         $this->assertArrayHasKey('name', $omikujiArr);
 
          // 配列構成　キーのチェック name

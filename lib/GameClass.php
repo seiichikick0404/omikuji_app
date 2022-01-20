@@ -31,8 +31,8 @@ class Game
 
         echo 'おみくじゲームを開始します' . PHP_EOL;
 
-        $omikujis = $handle->drawOmikuji($rule, $players);
-        $result = $handle->juge($rule, $omikujis, $players);
+        $handle->drawOmikuji($rule, $players);
+        $result = $handle->juge($rule, $players);
 
         return $result;
     }
@@ -60,6 +60,10 @@ class Game
     }
 }
 
-// $game = new Game(1);
+//  $game = new Game(1, ['プレイヤー1']);
+// $game->startGame();
+// exit;
+
+// $game = new Game(2, ['プレイヤー1', 'プレイヤー2']);
 // $game->startGame();
 // exit;
