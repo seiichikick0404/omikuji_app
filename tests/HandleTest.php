@@ -41,6 +41,9 @@ class HandleTest extends TestCase
         $handle = new Handle();
         $handle->drawOmikuji($rule, $players);
         $this->assertSame('プレイヤー', $handle->juge($rule, $players));
+
+        // 型チェック
+        $this->assertTrue(is_string($handle->juge($rule, $players)));
     
         // 2人の場合
         $player1 = new Player ('プレイヤー1');
@@ -58,6 +61,10 @@ class HandleTest extends TestCase
         } elseif ($omikujiArr['rank'] === $omikujiArr2['rank']) {
             $winner = '引き分け';
         }
+
         $this->assertSame($winner, $handle->juge($rule, $players));
+
+        // 型チェック
+        $this->assertTrue(is_string($handle->juge($rule, $players)));
     }
 }
