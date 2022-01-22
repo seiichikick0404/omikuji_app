@@ -60,7 +60,7 @@ class Game
     }
 }
 
-//  $game = new Game(1, ['プレイヤー1']);
+// $game = new Game(1, ['プレイヤー1']);
 // $game->startGame();
 // exit;
 

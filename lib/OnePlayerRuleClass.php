@@ -21,10 +21,10 @@ class OnePlayerRule implements Rule
 
     public function jugePlayer(array $players): string
     {
-        $winner = 'プレイヤー1';
+        $winner = $players[0]->getName();
         $this->displayResult($players, $winner);
 
-        return 'プレイヤー1';
+        return $winner;
     }
 
     public function displayResult(array $players, string $winner)
