@@ -40,7 +40,7 @@ class TwoPlayerRule implements Rule
         }
     }
 
-    public function displayResult(array $players, string $winner)
+    public function displayResult(array $players, string $winner): void
     {
         echo '-------------結果---------------------------' . PHP_EOL;
         $results = $players[0]->getOmikujiArr();

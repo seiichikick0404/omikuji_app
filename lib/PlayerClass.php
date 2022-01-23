@@ -12,7 +12,7 @@ class Player
         $this->name = $name;
     }
 
-    public function drawOmikuji(Omikuji $omikuji)
+    public function drawOmikuji(Omikuji $omikuji): array
     {
         $drawArr = $omikuji->randomOmikuji();
         $this->omikujiArr = $drawArr;
