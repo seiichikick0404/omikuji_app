@@ -50,9 +50,9 @@ class TwoPlayerRule implements Rule
         echo $players[1]->getName() . 'が引いたのは' . $results2['name'] . 'です' . PHP_EOL;
 
         if ($winner === 'draw') {
-            echo 'この勝負引き分けです';
+            echo 'この勝負引き分けです' . PHP_EOL;
         } else {
-            echo '勝者は' . $winner . 'です';
+            echo '勝者は' . $winner . 'です' . PHP_EOL;
         }
     }
 }

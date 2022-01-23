@@ -47,11 +47,11 @@ class TwoPlayerRuleTest extends TestCase
         $omikujiArr2 = $players[1]->getOmikujiArr();
 
         $winner = '';
-        if ($omikujiArr1['rank'] > $omikujiArr2) {
+        if ($omikujiArr1['rank'] > $omikujiArr2['rank']) {
             $winner = $players[0]->getName();
-        } elseif ($omikujiArr1['rank'] < $omikujiArr2) {
+        } elseif ($omikujiArr1['rank'] < $omikujiArr2['rank']) {
             $winner = $players[1]->getName();
-        } elseif ($omikujiArr1['rank'] === $omikujiArr2) {
+        } elseif ($omikujiArr1['rank'] === $omikujiArr2['rank']) {
             $winner = '引き分け';
         }
 
