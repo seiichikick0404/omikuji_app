@@ -33,6 +33,10 @@ class OnePlayerRuleTest extends TestCase
         $players = [$player];
         $rule->drawOmikuji($players);
 
+        // 型チェック string
+        $this->assertTrue(is_string($rule->jugePlayer($players)));
+
+        // 勝敗チェック
         $this->assertSame('プレイヤー1', ($rule->jugePlayer($players)));
     }
 }
