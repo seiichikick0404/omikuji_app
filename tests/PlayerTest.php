@@ -32,4 +32,19 @@ class PlayerTest extends TestCase
         // セットした名前が返却されるかチェック
         $this->assertSame('プレイヤー1', $player->getName());
     }
+
+    public function testGetOmikujiArr()
+    {
+        // 配列チェック
+        $player = new Player('プレイヤー1');
+        $this->assertTrue(is_array($player->getOmikujiArr()));
+
+        // 配列構成チェック name
+        $omikuji = new Omikuji();
+        $player->drawOmikuji($omikuji);
+        $this->assertArrayHasKey('name', $player->getOmikujiArr());
+
+        // 配列構成チェック rank
+        $this->assertArrayHasKey('rank', $player->getOmikujiArr());
+    }
 }

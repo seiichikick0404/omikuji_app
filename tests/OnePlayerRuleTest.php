@@ -19,10 +19,20 @@ class OnePlayerRuleTest extends TestCase
         // 配列かチェック
         $this->assertTrue(is_array($omikujiArr));
 
-        // // 配列構成　キーのチェック name
+        // 配列構成　キーのチェック name
         $this->assertArrayHasKey('name', $omikujiArr);
 
-         // 配列構成　キーのチェック name
-         $this->assertArrayHasKey('rank', $omikujiArr);
+        // 配列構成　キーのチェック name
+        $this->assertArrayHasKey('rank', $omikujiArr);
+    }
+
+    public function testJugePlayer()
+    {
+        $rule = new OnePlayerRule();
+        $player = new Player('プレイヤー1');
+        $players = [$player];
+        $rule->drawOmikuji($players);
+
+        $this->assertSame('プレイヤー1', ($rule->jugePlayer($players)));
     }
 }

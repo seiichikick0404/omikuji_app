@@ -8,7 +8,6 @@ use omikuji\lib\Omikuji;
 require_once(__DIR__ . '/RuleInterface.php');
 require_once(__DIR__ . '/OmikujiClass.php');
 require_once(__DIR__ . '/PlayerClass.php');
-require_once(__DIR__ . '/Player2Class.php');
 
 class TwoPlayerRule implements Rule
 {

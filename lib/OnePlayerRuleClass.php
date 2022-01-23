@@ -15,7 +15,6 @@ class OnePlayerRule implements Rule
     public function drawOmikuji(array $players): void
     {
         $omikuji = new Omikuji();
-       
         $players[0]->drawOmikuji($omikuji);
     }
 
