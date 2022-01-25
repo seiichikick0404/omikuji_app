@@ -5,6 +5,7 @@ namespace omikuji\lib;
 use omikuji\lib\TwoPlayerRule;
 use omikuji\lib\OnePlayerRule;
 use omikuji\lib\Player;
+use omikuji\lib\Handle;
 
 require_once(__DIR__ . '/PlayerClass.php');
 require_once(__DIR__ . '/OnePlayerRuleClass.php');
@@ -22,6 +23,10 @@ class Game
         $this->playerNameArr = $playerNameArr;
     }
 
+    /**
+     * ゲーム実行メソッドです
+     * @return string $result
+     */
     public function startGame(): string
     {
         $handle = new Handle();
@@ -36,6 +41,11 @@ class Game
         return $result;
     }
 
+    /**
+     * ルールの取得メソッド
+     * @param int $playerNum
+     * @return Rule 
+     */
     public function getRule(int $playerNum): object
     {
         if ($playerNum === 1) {
@@ -45,6 +55,10 @@ class Game
         }
     }
 
+    /**
+     * 参加プレイヤー数取得
+     * @return array;
+     */
     public function getPlayers(): array
     {
 

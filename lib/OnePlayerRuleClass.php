@@ -3,7 +3,6 @@
 namespace omikuji\lib;
 
 use omikuji\lib\Rule;
-use omikuji\lib\Player;
 use omikuji\lib\Omikuji;
 
 require_once(__DIR__ . '/RuleInterface.php');
@@ -12,12 +11,22 @@ require_once(__DIR__ . '/PlayerClass.php');
 
 class OnePlayerRule implements Rule
 {
+    /**
+     * おみくじを引く
+     * @param array $players
+     * @return void
+     */
     public function drawOmikuji(array $players): void
     {
         $omikuji = new Omikuji();
         $players[0]->drawOmikuji($omikuji);
     }
 
+    /**
+     * 勝敗判定
+     * @param array $players
+     * @return string $winner
+     */
     public function jugePlayer(array $players): string
     {
         $winner = $players[0]->getName();
@@ -26,6 +35,12 @@ class OnePlayerRule implements Rule
         return $winner;
     }
 
+    /**
+     * 結果を表示する
+     * @param array $players
+     * @param string $winner
+     * @return void
+     */
     public function displayResult(array $players, string $winner): void
     {
         echo '-------------結果---------------------------' . PHP_EOL;

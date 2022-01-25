@@ -35,6 +35,10 @@ class Omikuji
         ],
     ];
 
+    /**
+     * ランダムにおみくじを引く
+     * @return array
+     */
     public function randomOmikuji(): array
     {
         $arrayKey = (array_rand(self::OMIKUJI_RANKS, 1));

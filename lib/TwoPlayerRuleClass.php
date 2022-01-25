@@ -11,6 +11,11 @@ require_once(__DIR__ . '/PlayerClass.php');
 
 class TwoPlayerRule implements Rule
 {
+    /**
+     * おみくじを引く
+     * @param array $players
+     * @return void
+     */
     public function drawOmikuji(array $players): void
     {
         $omikuji = new Omikuji();
@@ -19,6 +24,11 @@ class TwoPlayerRule implements Rule
         $players[1]->drawOmikuji($omikuji);
     }
 
+    /**
+     * 勝敗判定
+     * @param array $players
+     * @return string $winner
+     */
     public function jugePlayer(array $players): string
     {
         $player1Arr = $players[0]->getOmikujiArr();
@@ -40,6 +50,12 @@ class TwoPlayerRule implements Rule
         }
     }
 
+    /**
+     * 結果を表示する
+     * @param array $players
+     * @param string $winner
+     * @return void
+     */
     public function displayResult(array $players, string $winner): void
     {
         echo '-------------結果---------------------------' . PHP_EOL;
