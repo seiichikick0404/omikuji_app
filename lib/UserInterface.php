@@ -2,7 +2,7 @@
 
 namespace omikuji\lib;
 
-Interface User
+interface User
 {
     public function drawOmikuji(Omikuji $omikuji): array;
     public function getName(): string;

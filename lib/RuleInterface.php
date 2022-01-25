@@ -2,7 +2,7 @@
 
 namespace omikuji\lib;
 
-Interface Rule
+interface Rule
 {
     public function drawOmikuji(array $players);
     public function jugePlayer(array $players);

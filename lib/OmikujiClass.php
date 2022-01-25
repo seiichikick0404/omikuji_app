@@ -35,7 +35,6 @@ class Omikuji
         ],
     ];
 
-    
     public function randomOmikuji(): array
     {
         $arrayKey = (array_rand(self::OMIKUJI_RANKS, 1));

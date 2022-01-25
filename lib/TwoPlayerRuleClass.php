@@ -34,7 +34,7 @@ class TwoPlayerRule implements Rule
             $this->displayResult($players, $winner);
             return $players[1]->getName();
         } elseif ($player1Arr['rank'] === $player2Arr['rank']) {
-            $winner ='draw';
+            $winner = 'draw';
             $this->displayResult($players, $winner);
             return '引き分け';
         }
@@ -46,7 +46,7 @@ class TwoPlayerRule implements Rule
         $results = $players[0]->getOmikujiArr();
         $results2 = $players[1]->getOmikujiArr();
 
-        echo $players[0]->getName() . 'が引いたのは' . $results['name'] . 'です' . PHP_EOL; 
+        echo $players[0]->getName() . 'が引いたのは' . $results['name'] . 'です' . PHP_EOL;
         echo $players[1]->getName() . 'が引いたのは' . $results2['name'] . 'です' . PHP_EOL;
 
         if ($winner === 'draw') {

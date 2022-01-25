@@ -6,7 +6,6 @@ use omikuji\lib\TwoPlayerRule;
 use omikuji\lib\OnePlayerRule;
 use omikuji\lib\Player;
 
-
 require_once(__DIR__ . '/PlayerClass.php');
 require_once(__DIR__ . '/OnePlayerRuleClass.php');
 require_once(__DIR__ . '/TwoPlayerRuleClass.php');
@@ -20,14 +19,14 @@ class Game
     public function __construct(int $playerNum, array $playerNameArr)
     {
         $this->playerNum = $playerNum;
-        $this->playerNameArr = $playerNameArr; 
+        $this->playerNameArr = $playerNameArr;
     }
 
     public function startGame(): string
     {
         $handle = new Handle();
         $rule = $this->getRule($this->playerNum);
-        $players = $this->getPlayers(); 
+        $players = $this->getPlayers();
 
         echo 'おみくじゲームを開始します' . PHP_EOL;
 
@@ -38,7 +37,7 @@ class Game
     }
 
     public function getRule(int $playerNum): object
-    {   
+    {
         if ($playerNum === 1) {
             return new OnePlayerRule();
         } elseif ($playerNum === 2) {

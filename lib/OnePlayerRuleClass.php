@@ -30,7 +30,7 @@ class OnePlayerRule implements Rule
     {
         echo '-------------結果---------------------------' . PHP_EOL;
         $results = $players[0]->getOmikujiArr();
-        echo $players[0]->getName() . 'が引いたのは' . $results['name'] . 'です' . PHP_EOL; 
+        echo $players[0]->getName() . 'が引いたのは' . $results['name'] . 'です' . PHP_EOL;
         echo '勝者は' . $winner . 'です' . PHP_EOL;
     }
 }

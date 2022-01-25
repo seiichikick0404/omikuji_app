@@ -24,7 +24,7 @@ class Player
         return $this->name;
     }
 
-    public function getOmikujiArr(): array 
+    public function getOmikujiArr(): array
     {
         return $this->omikujiArr;
     }
