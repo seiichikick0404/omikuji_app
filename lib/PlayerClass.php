@@ -4,8 +4,18 @@ namespace omikuji\lib;
 
 class Player
 {
+    /**
+     * プレイヤー名
+     * @var string
+     */
     private string $name = '';
+
+    /**
+     * 引いたおみくじ配列
+     * @var array<string|int>
+     */
     private array $omikujiArr = [];
+
 
     public function __construct(string $name)
     {
@@ -15,7 +25,7 @@ class Player
     /**
      * おみくじを引く
      * @param Omikuji $omikuji
-     * @return array $drawArr
+     * @return array<string|int> $drawArr
      */
     public function drawOmikuji(Omikuji $omikuji): array
     {
@@ -35,7 +45,7 @@ class Player
 
     /**
      * 取得したおみくじ配列の取得
-     * @return array $omikujiArr
+     * @return array<string|int> $omikujiArr
      */
     public function getOmikujiArr(): array
     {

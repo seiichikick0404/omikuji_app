@@ -14,9 +14,23 @@ require_once(__DIR__ . '/HandleClass.php');
 
 class Game
 {
+    /**
+     * プレイヤー参加人数
+     * @var int
+     */
     private int $playerNum = 0;
+
+    /**
+     * 参加プレイヤー名格納配列
+     * @var array<string>
+     */
     private array $playerNameArr = [];
 
+    /**
+     * 初期値セット
+     * @param int $playerNum
+     * @param array<string> $playerNameArr
+     */
     public function __construct(int $playerNum, array $playerNameArr)
     {
         $this->playerNum = $playerNum;
@@ -44,32 +58,39 @@ class Game
     /**
      * ルールの取得メソッド
      * @param int $playerNum
-     * @return Rule 
+     * @return Rule $rule
      */
     public function getRule(int $playerNum): object
     {
+        $rule = '';
+
         if ($playerNum === 1) {
-            return new OnePlayerRule();
+            $rule =  new OnePlayerRule();
         } elseif ($playerNum === 2) {
-            return new TwoPlayerRule();
+            $rule = new TwoPlayerRule();
         }
+
+        return $rule;
     }
 
     /**
      * 参加プレイヤー数取得
-     * @return array;
+     * @return array<object>
      */
     public function getPlayers(): array
     {
+        $players = [];
 
         if ($this->playerNum === 1) {
             $player1 = new Player($this->playerNameArr[0]);
-            return [$player1];
+            $players = [$player1];
         } elseif ($this->playerNum === 2) {
             $player1 = new Player($this->playerNameArr[0]);
             $player2 = new Player($this->playerNameArr[1]);
-            return [$player1, $player2];
+            $players = [$player1, $player2];
         }
+
+        return $players;
     }
 }
 

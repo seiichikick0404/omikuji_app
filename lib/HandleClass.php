@@ -9,7 +9,7 @@ class Handle
     /**
      * おみくじを引く
      * @param Rule $rule
-     * @param array $players
+     * @param array<object> $players
      * @return void
      */
     public function drawOmikuji(Rule $rule, array $players): void
@@ -20,7 +20,7 @@ class Handle
     /**
      * 勝者判定
      * @param Rule $rule
-     * @param array $players
+     * @param array<object> $players
      * @return string
      */
     public function juge(Rule $rule, array $players): string

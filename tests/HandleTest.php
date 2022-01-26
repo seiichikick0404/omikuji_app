@@ -59,7 +59,7 @@ class HandleTest extends TestCase
         } elseif ($omikujiArr['rank'] < $omikujiArr2['rank']) {
             $winner = $players[1]->getName();
         } elseif ($omikujiArr['rank'] === $omikujiArr2['rank']) {
-            $winner = '引き分け';
+            $winner = 'draw';
         }
 
         $this->assertSame($winner, $handle->juge($rule, $players));

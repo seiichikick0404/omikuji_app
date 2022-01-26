@@ -13,7 +13,7 @@ class TwoPlayerRule implements Rule
 {
     /**
      * おみくじを引く
-     * @param array $players
+     * @param array<object> $players
      * @return void
      */
     public function drawOmikuji(array $players): void
@@ -26,7 +26,7 @@ class TwoPlayerRule implements Rule
 
     /**
      * 勝敗判定
-     * @param array $players
+     * @param array<object> $players
      * @return string $winner
      */
     public function jugePlayer(array $players): string
@@ -38,21 +38,20 @@ class TwoPlayerRule implements Rule
         if ($player1Arr['rank'] > $player2Arr['rank']) {
             $winner = $players[0]->getName();
             $this->displayResult($players, $winner);
-            return $players[0]->getName();
         } elseif ($player2Arr['rank'] > $player1Arr['rank']) {
             $winner = $players[1]->getName();
             $this->displayResult($players, $winner);
-            return $players[1]->getName();
         } elseif ($player1Arr['rank'] === $player2Arr['rank']) {
             $winner = 'draw';
             $this->displayResult($players, $winner);
-            return '引き分け';
         }
+
+        return $winner;
     }
 
     /**
      * 結果を表示する
-     * @param array $players
+     * @param array<object> $players
      * @param string $winner
      * @return void
      */

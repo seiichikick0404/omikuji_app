@@ -37,7 +37,7 @@ class Omikuji
 
     /**
      * ランダムにおみくじを引く
-     * @return array
+     * @return array<string|int>
      */
     public function randomOmikuji(): array
     {

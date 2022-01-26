@@ -52,7 +52,7 @@ class TwoPlayerRuleTest extends TestCase
         } elseif ($omikujiArr1['rank'] < $omikujiArr2['rank']) {
             $winner = $players[1]->getName();
         } elseif ($omikujiArr1['rank'] === $omikujiArr2['rank']) {
-            $winner = '引き分け';
+            $winner = 'draw';
         }
 
         $this->assertSame($winner, ($rule->jugePlayer($players)));

@@ -7,7 +7,7 @@ interface User
     /**
      * おみくじを引く
      * @param Omikuji $omikuji
-     * @return array
+     * @return array<string|int>
      */
     public function drawOmikuji(Omikuji $omikuji): array;
 
@@ -19,7 +19,7 @@ interface User
 
     /**
      * 引いたおみくじ配列の取得
-     * @return array
+     * @return array<string|int>
      */
     public function getOmikujiArr(): array;
 }

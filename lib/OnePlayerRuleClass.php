@@ -13,7 +13,7 @@ class OnePlayerRule implements Rule
 {
     /**
      * おみくじを引く
-     * @param array $players
+     * @param array<object> $players
      * @return void
      */
     public function drawOmikuji(array $players): void
@@ -24,7 +24,7 @@ class OnePlayerRule implements Rule
 
     /**
      * 勝敗判定
-     * @param array $players
+     * @param array<object> $players
      * @return string $winner
      */
     public function jugePlayer(array $players): string
@@ -37,7 +37,7 @@ class OnePlayerRule implements Rule
 
     /**
      * 結果を表示する
-     * @param array $players
+     * @param array<object> $players
      * @param string $winner
      * @return void
      */
