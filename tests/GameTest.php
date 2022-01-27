@@ -16,11 +16,11 @@ class GameTest extends TestCase
     public function testGame()
     {
         // //型チェック（1プレイヤー時）
-        // $game = new Game(1, ['プレイヤー1']);
-        // $this->assertTrue(is_string($game->startGame()));
+        $game = new Game(1, ['プレイヤー1']);
+        $this->assertTrue(is_string($game->startGame()));
 
-        // // 戻り値チェック（1プレイヤー時）
-        // $this->assertSame('プレイヤー1', $game->startGame());
+        // 戻り値チェック（1プレイヤー時）
+        $this->assertSame('プレイヤー1', $game->startGame());
 
         //型チェック（2プレイヤー時）
         $game = new Game(2, ['プレイヤー1', 'プレイヤー2']);
